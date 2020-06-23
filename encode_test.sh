@@ -87,6 +87,7 @@ time ffmpeg ${ffmpeg_params} -i '*.png' ${output}/ffmpeg_default.gif
 time ffmpeg ${ffmpeg_params} -i '*.png' ${output}/ffmpeg_default.webm
 time ffmpeg ${ffmpeg_params} -i '*.png' -c:v libvpx-vp9 ${output}/ffmpeg_vp9_default.webm
 time ffmpeg ${ffmpeg_params} -i '*.png' -c:v libvpx-vp9 -lossless 1 ${output}/ffmpeg_vp9_lossless.webm
+time ffmpeg ${ffmpeg_params} -i '*.png' -c:v libvpx-vp9 -lossless 1 -speed 0 ${output}/ffmpeg_vp9_lossless_speed_0.webm
 time ffmpeg ${ffmpeg_params} -i '*.png' -c:v libvpx-vp9 -quality good -speed 0 ${output}/ffmpeg_vp9_quality_good_speed_0.webm
 time ffmpeg ${ffmpeg_params} -i '*.png' -c:v libvpx-vp9 -quality good -speed 5 ${output}/ffmpeg_vp9_quality_good_speed_5.webm
 time ffmpeg ${ffmpeg_params} -i '*.png' -c:v libvpx-vp9 -quality good -speed 0 -crf 0 ${output}/ffmpeg_vp9_quality_good_speed_0_cfr_0.webm
@@ -102,6 +103,9 @@ ffmpeg ${ffmpeg_params} -i '*.png' -pass 2 -c:v libvpx-vp9 ${output}/ffmpeg_vp9_
 
 time (ffmpeg ${ffmpeg_params} -i '*.png' -pass 1 -c:v libvpx-vp9 -lossless 1 -f webm /dev/null && \
 ffmpeg ${ffmpeg_params} -i '*.png' -pass 2 -c:v libvpx-vp9 -lossless 1 ${output}/ffmpeg_vp9_lossless_2_pass.webm)
+
+time (ffmpeg ${ffmpeg_params} -i '*.png' -pass 1 -c:v libvpx-vp9 -lossless 1 -speed 0 -f webm /dev/null && \
+ffmpeg ${ffmpeg_params} -i '*.png' -pass 2 -c:v libvpx-vp9 -lossless 1 -speed 0 ${output}/ffmpeg_vp9_lossless_speed_0_2_pass.webm)
 
 time (ffmpeg ${ffmpeg_params} -i '*.png' -pass 1 -c:v libvpx-vp9 -quality good -speed 0 -f webm /dev/null && \
 ffmpeg ${ffmpeg_params} -i '*.png' -pass 2 -c:v libvpx-vp9 -quality good -speed 0 ${output}/ffmpeg_vp9_quality_good_speed_0_2_pass.webm)
