@@ -1,8 +1,8 @@
-# VP9 best settings for converting gif animated drawing to video
+## VP9 best settings for converting animated gif-like png sequence to a video
 
-The goal of this page is to list results I captured while looking for the VP9 video encoder best settings for converting a gif animated drawing to a video. As gif is a *lossless* image format, the goal here is not to get the smallest video file, but more the best compromise between the quality (prio 1), the file size (prio 2) and the encoding time (prio 3).
+The goal of this page is to list results I captured while looking for the **VP9 video encoder best settings** for **converting a gif-like** animated drawing **based on a png sequence** to a **video**. As gif is a *lossless* image format, the goal here is not to get the smallest video file, but more the best compromise between the quality (prio 1), the file size (prio 2) and the encoding time (prio 3).
 
-> **Note** The input images have been captured thanks to the **Python Turtle Country Flags :snake: :turtle:** from [here](https://github.com/coolcornucopia/python-turtle-country-flags).
+> **Note** The input png sequence images have been captured thanks to the **Python Turtle Country Flags :snake: :turtle:** from [here](https://github.com/coolcornucopia/python-turtle-country-flags).
 
 
 ## Quick outcomes without wasting time reading more :smile:
@@ -25,6 +25,8 @@ ffmpeg -framerate my_fps_value -pattern_type glob -i '*.png' -c:v libvpx-vp9 -qu
 ```
 
 
+## Extra notes
+
 > **Note** HTML code for using a video as a gif animation image:
 ``` html
 <video autoplay loop muted playsinline title="your alternate text">
@@ -46,8 +48,8 @@ ffmpeg -framerate $fps -pattern_type glob -i '*.png' output.webm  # The wildcad 
 
 |     |     |
 | :-: | :-: |
-| ![gifsicle_o3_colors_256.gif (730,476 bytes)](output/gifsicle_o3_colors_256.gif?raw=true "gifsicle_o3_colors_256.gif (730,476 bytes)")<br>**Big gif file**<br>gifsicle_o3_colors_256.gif (730,476 bytes) | <video autoplay loop muted playsinline title="ffmpeg_vp9_default.webm (294,570 bytes)"><source src="output/ffmpeg_vp9_default.webm" type="video/webm"></video><br>**perfect in most cases :heavy_check_mark:**<br>ffmpeg_vp9_default.webm (294,570 bytes) |
-| <video autoplay loop muted playsinline title="ffmpeg_vp9_lossless_speed_0_2_pass.webm (297,484 bytes)"><source src="output/ffmpeg_vp9_lossless_speed_0_2_pass.webm" type="video/webm"></video><br>**the best quality :rainbow:**<br>ffmpeg_vp9_lossless_speed_0_2_pass.webm (297,484 bytes) | <video autoplay loop muted playsinline title="ffmpeg_vp9_quality_good_speed_0_cfr_10.webm (180,735 bytes)"><source src="output/ffmpeg_vp9_quality_good_speed_0_cfr_10.webm" type="video/webm"></video><br>**the smallest file size :muscle:**<br>ffmpeg_vp9_quality_good_speed_0_cfr_10.webm (180,735 bytes) |
+| ![gifsicle_o3_colors_256.gif (730,476 bytes)](output/gifsicle_o3_colors_256.gif?raw=true "gifsicle_o3_colors_256.gif (730,476 bytes)")<br>**Big gif file**<br>gifsicle_o3_colors_256.gif (730,476 bytes) | <video autoplay loop muted playsinline title="ffmpeg_vp9_default.webm (294,570 bytes)"><source src="https://github.com/coolcornucopia/vp9-best-settings-for-converting-gif-animated-drawing-to-video/blob/master/output/ffmpeg_vp9_default.webm" type="video/webm"></video><br>**perfect in most cases :heavy_check_mark:**<br>ffmpeg_vp9_default.webm (294,570 bytes) |
+| <video autoplay loop muted playsinline title="ffmpeg_vp9_lossless_speed_0_2_pass.webm (297,484 bytes)"><source src="https://github.com/coolcornucopia/vp9-best-settings-for-converting-gif-animated-drawing-to-video/blob/master/output/ffmpeg_vp9_lossless_speed_0_2_pass.webm" type="video/webm"></video><br>**the best quality :rainbow:**<br>ffmpeg_vp9_lossless_speed_0_2_pass.webm (297,484 bytes) | <video autoplay loop muted playsinline title="ffmpeg_vp9_quality_good_speed_0_cfr_10.webm (180,735 bytes)"><source src="https://github.com/coolcornucopia/vp9-best-settings-for-converting-gif-animated-drawing-to-video/blob/master/output/ffmpeg_vp9_quality_good_speed_0_cfr_10.webm" type="video/webm"></video><br>**the smallest file size :muscle:**<br>ffmpeg_vp9_quality_good_speed_0_cfr_10.webm (180,735 bytes) |
 
 
 ## Detailed results
