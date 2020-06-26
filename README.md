@@ -7,7 +7,7 @@ The goal of this page is to list results I captured while looking for the **VP9 
 
 ## Quick outcomes without wasting time reading more :smile:
 
-0. :medal_sports: **Forget gif format, use instead webm vp9 video format**.
+0. :medal_sports: **Forget gif format, use instead webm vp9 video format**. You may think about using apng or webp image formats but results are not as good as vp9 for both quality and file size.
 1. :1st_place_medal: Best command that is **perfect in most cases :heavy_check_mark:**:
 ``` bash
 ffmpeg -framerate my_fps_value -pattern_type glob -i '*.png' -c:v libvpx-vp9 output.webm
@@ -48,8 +48,10 @@ ffmpeg -framerate $fps -pattern_type glob -i '*.png' output.webm  # The wildcad 
 
 |     |     |
 | :-: | :-: |
-| ![gifsicle_o3_colors_256.gif (730,476 bytes)](output/gifsicle_o3_colors_256.gif?raw=true "gifsicle_o3_colors_256.gif (730,476 bytes)")<br>**Big gif file**<br>gifsicle_o3_colors_256.gif (730,476 bytes) | <video autoplay loop muted playsinline title="ffmpeg_vp9_default.webm (294,570 bytes)"><source src="https://github.com/coolcornucopia/vp9-best-settings-for-converting-gif-animated-drawing-to-video/blob/master/output/ffmpeg_vp9_default.webm" type="video/webm"></video><br>**perfect in most cases :heavy_check_mark:**<br>ffmpeg_vp9_default.webm (294,570 bytes) |
-| <video autoplay loop muted playsinline title="ffmpeg_vp9_lossless_speed_0_2_pass.webm (297,484 bytes)"><source src="https://github.com/coolcornucopia/vp9-best-settings-for-converting-gif-animated-drawing-to-video/blob/master/output/ffmpeg_vp9_lossless_speed_0_2_pass.webm" type="video/webm"></video><br>**the best quality :rainbow:**<br>ffmpeg_vp9_lossless_speed_0_2_pass.webm (297,484 bytes) | <video autoplay loop muted playsinline title="ffmpeg_vp9_quality_good_speed_0_cfr_10.webm (180,735 bytes)"><source src="https://github.com/coolcornucopia/vp9-best-settings-for-converting-gif-animated-drawing-to-video/blob/master/output/ffmpeg_vp9_quality_good_speed_0_cfr_10.webm" type="video/webm"></video><br>**the smallest file size :muscle:**<br>ffmpeg_vp9_quality_good_speed_0_cfr_10.webm (180,735 bytes) |
+| ![gifsicle_o3_colors_256.gif (730,476 bytes)](output/gifsicle_o3_colors_256.gif?raw=true "gifsicle_o3_colors_256.gif (730,476 bytes)")<br>**Big gif file**<br>gifsicle_o3_colors_256.gif (730,476 bytes) | <video autoplay loop muted playsinline title="ffmpeg_vp9_default.webm (294,570 bytes)"><source src="output/ffmpeg_vp9_default.webm" type="video/webm"></video><br>**perfect in most cases :heavy_check_mark:**<br>ffmpeg_vp9_default.webm (294,570 bytes) |
+| <video autoplay loop muted playsinline title="ffmpeg_vp9_lossless_speed_0_2_pass.webm (297,484 bytes)"><source src="output/ffmpeg_vp9_lossless_speed_0_2_pass.webm" type="video/webm"></video><br>**the best quality :rainbow:**<br>ffmpeg_vp9_lossless_speed_0_2_pass.webm (297,484 bytes) | <video autoplay loop muted playsinline title="ffmpeg_vp9_quality_good_speed_0_cfr_10.webm (180,735 bytes)"><source src="output/ffmpeg_vp9_quality_good_speed_0_cfr_10.webm" type="video/webm"></video><br>**the smallest file size :muscle:**<br>ffmpeg_vp9_quality_good_speed_0_cfr_10.webm (180,735 bytes) |
+
+> **Note** :warning: [Github](https://github.com/) does not support video in markdown files, even if it is with the `<video>` html tag :-(!!! If you want to better see the differences between the 3 winners, please open the related [README.html](README.html).
 
 
 ## Detailed results
@@ -66,19 +68,19 @@ ffmpeg -framerate $fps -pattern_type glob -i '*.png' output.webm  # The wildcad 
 | gif      | 1,865,002 | 155%  | Bad         | ffmpeg\_default.gif                                         | 2,3     | \-88% |
 | vp9      | 294,570   | \-60% | Good        | ffmpeg\_default.webm                                        | 19,1    | **100%**  |
 | vp9      | 290,069   | \-60% | Good        | ffmpeg\_default\_2\_pass.webm                               | 43,1    | 126%  |
-| **vp9** | **294,570** | **\-60%:heavy_check_mark:** | **Good:heavy_check_mark:** | **ffmpeg\_vp9\_default.webm** | **19,1** | **0%** |
+| **vp9** | **294,570** | **\-60%<br>:heavy_check_mark:** | **Good<br>:heavy_check_mark:** | **ffmpeg\_vp9\_default.webm** | **19,1** | **0%** |
 | vp9      | 290,069   | \-60% | Good        | ffmpeg\_vp9\_default\_2\_pass.webm                          | 43,1    | 126%  |
 | vp9      | 440,770   | \-40% | Perfect     | ffmpeg\_vp9\_lossless.webm                                  | 31,7    | 66%   |
 | vp9      | 315,926   | \-57% | Perfect     | ffmpeg\_vp9\_lossless\_2\_pass.webm                         | 41,9    | 119%  |
 | vp9      | 342,858   | \-53% | Perfect     | ffmpeg\_vp9\_lossless\_speed\_0.webm                        | 42,2    | 121%  |
-| **vp9**  | **297,484** | **\-59%** | **Perfect:rainbow:** | **ffmpeg\_vp9\_lossless\_speed\_0\_2\_pass.webm** | **55,5** | **191%** |
+| **vp9**  | **297,484** | **\-59%** | **Perfect<br>:rainbow:** | **ffmpeg\_vp9\_lossless\_speed\_0\_2\_pass.webm** | **55,5** | **191%** |
 | vp9      | 289,051   | \-60% | Good        | ffmpeg\_vp9\_quality\_good\_speed\_0.webm                   | 27,7    | 45%   |
 | vp9      | 286,179   | \-61% | Good        | ffmpeg\_vp9\_quality\_good\_speed\_0\_2\_pass.webm          | 60,2    | 215%  |
 | vp9      | 393,069   | \-46% | Medium      | ffmpeg\_vp9\_quality\_good\_speed\_5.webm                   | 14,2    | \-26% |
 | vp9      | 343,217   | \-53% | Medium      | ffmpeg\_vp9\_quality\_good\_speed\_5\_2\_pass.webm          | 32,2    | 68%   |
 | vp9      | 289,051   | \-60% | Good        | ffmpeg\_vp9\_quality\_good\_speed\_0\_cfr\_0.webm           | 27,8    | 45%   |
 | vp9      | 234,628   | \-68% | Good        | ffmpeg\_vp9\_quality\_good\_speed\_0\_cfr\_0\_2\_pass.webm  | 38,5    | 101%  |
-| **vp9** | **180,735** | **\-75%:muscle:** | **Medium** | **ffmpeg\_vp9\_quality\_good\_speed\_0\_cfr\_10.webm** | **24,3** | **27%** |
+| **vp9** | **180,735** | **\-75%<br>:muscle:** | **Medium** | **ffmpeg\_vp9\_quality\_good\_speed\_0\_cfr\_10.webm** | **24,3** | **27%** |
 | vp9      | 211,367   | \-71% | Medium      | ffmpeg\_vp9\_quality\_good\_speed\_0\_cfr\_10\_2\_pass.webm | 37,5    | 96%   |
 | vp9      | 91,638    | \-87% | Low         | ffmpeg\_vp9\_quality\_good\_speed\_0\_cfr\_63.webm          | 23,2    | 21%   |
 | vp9      | 85,450    | \-88% | Low         | ffmpeg\_vp9\_quality\_good\_speed\_0\_cfr\_63\_2\_pass.webm | 32,5    | 70%   |
@@ -101,11 +103,11 @@ ffmpeg -framerate $fps -pattern_type glob -i '*.png' output.webm  # The wildcad 
 
 ## Related documentations
 
-Video
+**Video**
 * **ffmpeg**: [VP9](https://trac.ffmpeg.org/wiki/Encode/VP9)
 * **VP9** on Google developers: [basics](https://developers.google.com/media/vp9/the-basics), [bitrate-modes](https://developers.google.com/media/vp9/bitrate-modes) & [vod settings](https://developers.google.com/media/vp9/settings/vod/)
 
-Gif
+**Gif**
 * **ImageMagick** and its `convert` tool: https://imagemagick.org/script/convert.php
 * **ezgif** online gif converter: https://ezgif.com/, based on gifsicle & lossygif tools.
 * **gifsicle** gif optimizer tool: https://www.lcdf.org/gifsicle/ and the related [gifsicle man page](https://www.lcdf.org/gifsicle/man.html)
@@ -132,8 +134,32 @@ rm input.7z
 7z a input.7z input
 ```
 
+## APNG or WebP instead of vp9 ?
+Before selecting vp9, I have considered both **apng** and **webp** image formats. But results are clearly not (maybe not yet) as good as vp9 ones for both quality (lossless) and filesize (lossy).
+
+**APNG**
+``` bash
+time gif2apng ${output}/imagemagick_default.gif -o ${output}/gif2apng_default.png
+```
+
+**WebP**
+``` bash
+export t=`echo "1000/$fps" | bc`
+time img2webp -loop 0 -d $t             ${input}/*.png -o ${output}/img2webp_default.webp
+time img2webp -loop 0 -d $t -lossless   ${input}/*.png -o ${output}/img2webp_lossless.webp
+time img2webp -loop 0 -d $t -min_size   ${input}/*.png -o ${output}/img2webp_min_size.webp
+time img2webp -loop 0 -d $t -mixed      ${input}/*.png -o ${output}/img2webp_mixed.webp
+time img2webp -loop 0 -d $t -mixed -m 6 ${input}/*.png -o ${output}/img2webp_mixed_m6.webp
+```
+
+**Documentations**
+* WebP: [img2webp](https://developers.google.com/speed/webp/docs/img2webp)
+* APNG: [gif2apng](http://gif2apng.sourceforge.net/) or [ezgif online apng](https://ezgif.com/apng-maker)
+
+
 ## Wrap up
 We may have better results using different vp9 encoder parameters...
+
 
 
 ## Comments:exclamation: Questions:question:

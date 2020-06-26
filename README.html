@@ -1,0 +1,665 @@
+<!DOCTYPE html><html><head>
+      <title>README</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////home/cobra/.atom/packages/markdown-preview-enhanced/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+
+      
+      
+      
+      
+      
+      
+      
+
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h2 class="mume-header" id="vp9-best-settings-for-converting-animated-gif-like-png-sequence-to-a-video">VP9 best settings for converting animated gif-like png sequence to a video</h2>
+
+<p>The goal of this page is to list results I captured while looking for the <strong>VP9 video encoder best settings</strong> for <strong>converting a gif-like</strong> animated drawing <strong>based on a png sequence</strong> to a <strong>video</strong>. As gif is a <em>lossless</em> image format, the goal here is not to get the smallest video file, but more the best compromise between the quality (prio 1), the file size (prio 2) and the encoding time (prio 3).</p>
+<blockquote>
+<p><strong>Note</strong> The input png sequence images have been captured thanks to the <strong>Python Turtle Country Flags &#x1F40D; &#x1F422;</strong> from <a href="https://github.com/coolcornucopia/python-turtle-country-flags">here</a>.</p>
+</blockquote>
+<h2 class="mume-header" id="quick-outcomes-without-wasting-time-reading-more-smile">Quick outcomes without wasting time reading more &#x1F604;</h2>
+
+<ol start="0">
+<li>&#x1F3C5; <strong>Forget gif format, use instead webm vp9 video format</strong>. You may think about using apng or webp image formats but results are not as good as vp9 for both quality and file size.</li>
+<li>&#x1F947; Best command that is <strong>perfect in most cases &#x2714;&#xFE0F;</strong>:</li>
+</ol>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">ffmpeg -framerate my_fps_value -pattern_type glob -i <span class="token string">&apos;*.png&apos;</span> -c:v libvpx-vp9 output.webm
+</pre><ol start="2">
+<li>&#x1F948; Best command for <strong>the best quality &#x1F308;</strong> (file size close to 2. but slower encoding in 2-pass):</li>
+</ol>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment"># ffmpeg vp9 encode lossless speed 0 2-pass</span>
+ffmpeg -framerate my_fps_value -y -i <span class="token string">&apos;*.png&apos;</span> -pass 1 -c:v libvpx-vp9 -lossless 1 -speed 0 -f webm /dev/null
+ffmpeg -framerate my_fps_value    -i <span class="token string">&apos;*.png&apos;</span> -pass 2 -c:v libvpx-vp9 -lossless 1 -speed 0 output.webm
+</pre><ol start="3">
+<li>&#x1F949; Best command for <strong>the smallest file size &#x1F4AA;</strong> (quality is less good than 2. and 3. but acceptable) :</li>
+</ol>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment"># ffmpeg vp9 encode quality good speed 0 crf 10</span>
+ffmpeg -framerate my_fps_value -pattern_type glob -i <span class="token string">&apos;*.png&apos;</span> -c:v libvpx-vp9 -quality good -speed 0 -crf 10 output.webm
+</pre><h2 class="mume-header" id="extra-notes">Extra notes</h2>
+
+<blockquote>
+<p><strong>Note</strong> HTML code for using a video as a gif animation image:</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="html" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">autoplay</span> <span class="token attr-name">loop</span> <span class="token attr-name">muted</span> <span class="token attr-name">playsinline</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>your alternate text<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>your_file.webm<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>video/webm<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">&gt;</span></span>
+</pre><blockquote>
+<p><strong>Note</strong> ffmpeg input file syntax: Hereafter examples that may help you using the ffmpeg syntax (<a href="https://ffmpeg.org/ffmpeg-formats.html#image2-1">ffmpeg related documentation</a>):</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">export</span> fps<span class="token operator">=</span>20
+ffmpeg -framerate <span class="token variable">$fps</span> -i your_files_%04d.png output.webm  <span class="token comment"># The printf way</span>
+ffmpeg -framerate <span class="token variable">$fps</span> -pattern_type glob -i <span class="token string">&apos;*.png&apos;</span> output.webm  <span class="token comment"># The wildcad way</span>
+</pre><blockquote>
+<p><strong>Note</strong> I added this above note because it took me times to understand the ffmpeg syntax and there are still <em>odd</em> things that still does not work on my side like. For instance, you can not do <code>export myfile=&quot;&apos;*.png&apos;&quot;</code> and use <code>$myfile</code> instead of <code>*.png</code> because you will have an <code>No such file or directory</code> error message &#x1F626;</p>
+</blockquote>
+<h2 class="mume-header" id="visual-results">Visual results</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="output/gifsicle_o3_colors_256.gif?raw=true" alt="gifsicle_o3_colors_256.gif (730,476 bytes)" title="gifsicle_o3_colors_256.gif (730,476 bytes)"><br><strong>Big gif file</strong><br>gifsicle_o3_colors_256.gif (730,476 bytes)</td>
+<td style="text-align:center"><video autoplay loop muted playsinline title="ffmpeg_vp9_default.webm (294,570 bytes)"><source src="output/ffmpeg_vp9_default.webm" type="video/webm"></video><br><strong>perfect in most cases &#x2714;&#xFE0F;</strong><br>ffmpeg_vp9_default.webm (294,570 bytes)</td>
+</tr>
+<tr>
+<td style="text-align:center"><video autoplay loop muted playsinline title="ffmpeg_vp9_lossless_speed_0_2_pass.webm (297,484 bytes)"><source src="output/ffmpeg_vp9_lossless_speed_0_2_pass.webm" type="video/webm"></video><br><strong>the best quality &#x1F308;</strong><br>ffmpeg_vp9_lossless_speed_0_2_pass.webm (297,484 bytes)</td>
+<td style="text-align:center"><video autoplay loop muted playsinline title="ffmpeg_vp9_quality_good_speed_0_cfr_10.webm (180,735 bytes)"><source src="output/ffmpeg_vp9_quality_good_speed_0_cfr_10.webm" type="video/webm"></video><br><strong>the smallest file size &#x1F4AA;</strong><br>ffmpeg_vp9_quality_good_speed_0_cfr_10.webm (180,735 bytes)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note</strong> &#x26A0;&#xFE0F; <a href="https://github.com/">Github</a> does not support video in markdown files, even if it is with the <code>&lt;video&gt;</code> html tag &#x1F626;!!! If you want to better see the differences between the 3 winners, please open the related <a href="README.html">README.html</a>.</p>
+</blockquote>
+<h2 class="mume-header" id="detailed-results">Detailed results</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>Type</strong></th>
+<th style="text-align:right"><strong>Size</strong></th>
+<th style="text-align:right"><strong>%</strong></th>
+<th style="text-align:center"><strong>Quality</strong></th>
+<th><strong>Filename</strong></th>
+<th style="text-align:right"><strong>sec</strong></th>
+<th style="text-align:right"><strong>%</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">gif</td>
+<td style="text-align:right">2,288,891</td>
+<td style="text-align:right">213%</td>
+<td style="text-align:center">Perfect</td>
+<td>imagemagick_default.gif</td>
+<td style="text-align:right">103,5</td>
+<td style="text-align:right">442%</td>
+</tr>
+<tr>
+<td style="text-align:center">gif</td>
+<td style="text-align:right">816,729</td>
+<td style="text-align:right">12%</td>
+<td style="text-align:center">Perfect</td>
+<td>imagemagick_layers_optimize.gif</td>
+<td style="text-align:right">42,9</td>
+<td style="text-align:right">125%</td>
+</tr>
+<tr>
+<td style="text-align:center">gif</td>
+<td style="text-align:right">931,165</td>
+<td style="text-align:right">27%</td>
+<td style="text-align:center">Perfect</td>
+<td>ezgif_lossy_200pc.gif <a href="https://ezgif.com/">ezgif online optimizer (lossy 200%)</a></td>
+<td style="text-align:right">na</td>
+<td style="text-align:right">na</td>
+</tr>
+<tr>
+<td style="text-align:center">gif</td>
+<td style="text-align:right">1,923,835</td>
+<td style="text-align:right">163%</td>
+<td style="text-align:center">Perfect</td>
+<td>gifsicle_o1.gif</td>
+<td style="text-align:right">1,1</td>
+<td style="text-align:right">-94%</td>
+</tr>
+<tr>
+<td style="text-align:center">gif</td>
+<td style="text-align:right">1,099,891</td>
+<td style="text-align:right">51%</td>
+<td style="text-align:center">Perfect</td>
+<td>gifsicle_o2.gif</td>
+<td style="text-align:right">1,3</td>
+<td style="text-align:right">-93%</td>
+</tr>
+<tr>
+<td style="text-align:center">gif</td>
+<td style="text-align:right">1,058,821</td>
+<td style="text-align:right">45%</td>
+<td style="text-align:center">Perfect</td>
+<td>gifsicle_o3.gif</td>
+<td style="text-align:right">1,6</td>
+<td style="text-align:right">-92%</td>
+</tr>
+<tr>
+<td style="text-align:center">gif</td>
+<td style="text-align:right">730,476</td>
+<td style="text-align:right"><strong>100%</strong></td>
+<td style="text-align:center">Perfect</td>
+<td>gifsicle_o3_colors_256.gif</td>
+<td style="text-align:right">1,8</td>
+<td style="text-align:right">-90%</td>
+</tr>
+<tr>
+<td style="text-align:center">gif</td>
+<td style="text-align:right">1,865,002</td>
+<td style="text-align:right">155%</td>
+<td style="text-align:center">Bad</td>
+<td>ffmpeg_default.gif</td>
+<td style="text-align:right">2,3</td>
+<td style="text-align:right">-88%</td>
+</tr>
+<tr>
+<td style="text-align:center">vp9</td>
+<td style="text-align:right">294,570</td>
+<td style="text-align:right">-60%</td>
+<td style="text-align:center">Good</td>
+<td>ffmpeg_default.webm</td>
+<td style="text-align:right">19,1</td>
+<td style="text-align:right"><strong>100%</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">vp9</td>
+<td style="text-align:right">290,069</td>
+<td style="text-align:right">-60%</td>
+<td style="text-align:center">Good</td>
+<td>ffmpeg_default_2_pass.webm</td>
+<td style="text-align:right">43,1</td>
+<td style="text-align:right">126%</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>vp9</strong></td>
+<td style="text-align:right"><strong>294,570</strong></td>
+<td style="text-align:right"><strong>-60%<br>&#x2714;&#xFE0F;</strong></td>
+<td style="text-align:center"><strong>Good<br>&#x2714;&#xFE0F;</strong></td>
+<td><strong>ffmpeg_vp9_default.webm</strong></td>
+<td style="text-align:right"><strong>19,1</strong></td>
+<td style="text-align:right"><strong>0%</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">vp9</td>
+<td style="text-align:right">290,069</td>
+<td style="text-align:right">-60%</td>
+<td style="text-align:center">Good</td>
+<td>ffmpeg_vp9_default_2_pass.webm</td>
+<td style="text-align:right">43,1</td>
+<td style="text-align:right">126%</td>
+</tr>
+<tr>
+<td style="text-align:center">vp9</td>
+<td style="text-align:right">440,770</td>
+<td style="text-align:right">-40%</td>
+<td style="text-align:center">Perfect</td>
+<td>ffmpeg_vp9_lossless.webm</td>
+<td style="text-align:right">31,7</td>
+<td style="text-align:right">66%</td>
+</tr>
+<tr>
+<td style="text-align:center">vp9</td>
+<td style="text-align:right">315,926</td>
+<td style="text-align:right">-57%</td>
+<td style="text-align:center">Perfect</td>
+<td>ffmpeg_vp9_lossless_2_pass.webm</td>
+<td style="text-align:right">41,9</td>
+<td style="text-align:right">119%</td>
+</tr>
+<tr>
+<td style="text-align:center">vp9</td>
+<td style="text-align:right">342,858</td>
+<td style="text-align:right">-53%</td>
+<td style="text-align:center">Perfect</td>
+<td>ffmpeg_vp9_lossless_speed_0.webm</td>
+<td style="text-align:right">42,2</td>
+<td style="text-align:right">121%</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>vp9</strong></td>
+<td style="text-align:right"><strong>297,484</strong></td>
+<td style="text-align:right"><strong>-59%</strong></td>
+<td style="text-align:center"><strong>Perfect<br>&#x1F308;</strong></td>
+<td><strong>ffmpeg_vp9_lossless_speed_0_2_pass.webm</strong></td>
+<td style="text-align:right"><strong>55,5</strong></td>
+<td style="text-align:right"><strong>191%</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">vp9</td>
+<td style="text-align:right">289,051</td>
+<td style="text-align:right">-60%</td>
+<td style="text-align:center">Good</td>
+<td>ffmpeg_vp9_quality_good_speed_0.webm</td>
+<td style="text-align:right">27,7</td>
+<td style="text-align:right">45%</td>
+</tr>
+<tr>
+<td style="text-align:center">vp9</td>
+<td style="text-align:right">286,179</td>
+<td style="text-align:right">-61%</td>
+<td style="text-align:center">Good</td>
+<td>ffmpeg_vp9_quality_good_speed_0_2_pass.webm</td>
+<td style="text-align:right">60,2</td>
+<td style="text-align:right">215%</td>
+</tr>
+<tr>
+<td style="text-align:center">vp9</td>
+<td style="text-align:right">393,069</td>
+<td style="text-align:right">-46%</td>
+<td style="text-align:center">Medium</td>
+<td>ffmpeg_vp9_quality_good_speed_5.webm</td>
+<td style="text-align:right">14,2</td>
+<td style="text-align:right">-26%</td>
+</tr>
+<tr>
+<td style="text-align:center">vp9</td>
+<td style="text-align:right">343,217</td>
+<td style="text-align:right">-53%</td>
+<td style="text-align:center">Medium</td>
+<td>ffmpeg_vp9_quality_good_speed_5_2_pass.webm</td>
+<td style="text-align:right">32,2</td>
+<td style="text-align:right">68%</td>
+</tr>
+<tr>
+<td style="text-align:center">vp9</td>
+<td style="text-align:right">289,051</td>
+<td style="text-align:right">-60%</td>
+<td style="text-align:center">Good</td>
+<td>ffmpeg_vp9_quality_good_speed_0_cfr_0.webm</td>
+<td style="text-align:right">27,8</td>
+<td style="text-align:right">45%</td>
+</tr>
+<tr>
+<td style="text-align:center">vp9</td>
+<td style="text-align:right">234,628</td>
+<td style="text-align:right">-68%</td>
+<td style="text-align:center">Good</td>
+<td>ffmpeg_vp9_quality_good_speed_0_cfr_0_2_pass.webm</td>
+<td style="text-align:right">38,5</td>
+<td style="text-align:right">101%</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>vp9</strong></td>
+<td style="text-align:right"><strong>180,735</strong></td>
+<td style="text-align:right"><strong>-75%<br>&#x1F4AA;</strong></td>
+<td style="text-align:center"><strong>Medium</strong></td>
+<td><strong>ffmpeg_vp9_quality_good_speed_0_cfr_10.webm</strong></td>
+<td style="text-align:right"><strong>24,3</strong></td>
+<td style="text-align:right"><strong>27%</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">vp9</td>
+<td style="text-align:right">211,367</td>
+<td style="text-align:right">-71%</td>
+<td style="text-align:center">Medium</td>
+<td>ffmpeg_vp9_quality_good_speed_0_cfr_10_2_pass.webm</td>
+<td style="text-align:right">37,5</td>
+<td style="text-align:right">96%</td>
+</tr>
+<tr>
+<td style="text-align:center">vp9</td>
+<td style="text-align:right">91,638</td>
+<td style="text-align:right">-87%</td>
+<td style="text-align:center">Low</td>
+<td>ffmpeg_vp9_quality_good_speed_0_cfr_63.webm</td>
+<td style="text-align:right">23,2</td>
+<td style="text-align:right">21%</td>
+</tr>
+<tr>
+<td style="text-align:center">vp9</td>
+<td style="text-align:right">85,450</td>
+<td style="text-align:right">-88%</td>
+<td style="text-align:center">Low</td>
+<td>ffmpeg_vp9_quality_good_speed_0_cfr_63_2_pass.webm</td>
+<td style="text-align:right">32,5</td>
+<td style="text-align:right">70%</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note</strong> All results are in <a href="https://github.com/coolcornucopia/vp9-best-settings-for-converting-gif-animated-drawing-to-video/blob/master/results.ods">results.ods</a> file.</p>
+</blockquote>
+<p><strong>Few comments</strong></p>
+<ul>
+<li>vp9 <code>-quality best</code> is not recommended in the vp9 documentation, <code>-quality realtime</code> is for steaming, here only <code>-quality good</code> is usefull then.</li>
+<li>ffmpeg by default uses vp9 on my linux configuration. If you have a doubt, please add <code>-c:v libvpx-vp9</code>.</li>
+<li>we may play more with <code>-speed x</code> too but not really necessary here as the animation is very simple and short. Moreover, gif images are lossless so better to use <code>-speed 0</code> to get the best quality.</li>
+<li>gifsicle works only on gif file as input.</li>
+<li><a href="https://ezgif.com/">ezgif.com online gif optimizer</a> has been evaluated too but results are lower than <code>gifsicle -O3</code>.</li>
+</ul>
+<p><strong>Warnings</strong></p>
+<ul>
+<li>&#x26A0;&#xFE0F; ffmpeg gif output is not correct! Maybe I should try the latest ffmpeg version...</li>
+<li>&#x26A0;&#xFE0F; Measured times depend on my hw configuration, your results will differ probably.</li>
+<li>&#x26A0;&#xFE0F; If it works in my case, it does not necessarily mean that it will work in all your cases, even if I sincerely think that my advices remain valid in many cases, anyway, hope it helps &#x1F604;.</li>
+</ul>
+<h2 class="mume-header" id="related-documentations">Related documentations</h2>
+
+<p><strong>Video</strong></p>
+<ul>
+<li><strong>ffmpeg</strong>: <a href="https://trac.ffmpeg.org/wiki/Encode/VP9">VP9</a></li>
+<li><strong>VP9</strong> on Google developers: <a href="https://developers.google.com/media/vp9/the-basics">basics</a>, <a href="https://developers.google.com/media/vp9/bitrate-modes">bitrate-modes</a> &amp; <a href="https://developers.google.com/media/vp9/settings/vod/">vod settings</a></li>
+</ul>
+<p><strong>Gif</strong></p>
+<ul>
+<li><strong>ImageMagick</strong> and its <code>convert</code> tool: <a href="https://imagemagick.org/script/convert.php">https://imagemagick.org/script/convert.php</a></li>
+<li><strong>ezgif</strong> online gif converter: <a href="https://ezgif.com/">https://ezgif.com/</a>, based on gifsicle &amp; lossygif tools.</li>
+<li><strong>gifsicle</strong> gif optimizer tool: <a href="https://www.lcdf.org/gifsicle/">https://www.lcdf.org/gifsicle/</a> and the related <a href="https://www.lcdf.org/gifsicle/man.html">gifsicle man page</a></li>
+<li><strong>lossygif</strong>: <a href="https://kornel.ski/lossygif">https://kornel.ski/lossygif</a></li>
+</ul>
+<h2 class="mume-header" id="how-to-use-the-scripts">How to use the scripts</h2>
+
+<p>The <a href="https://github.com/coolcornucopia/vp9-best-settings-for-converting-gif-animated-drawing-to-video/blob/master/encode_test.sh">encode_test.sh script</a> contains all the different commands, that may help you if you are looking for details.</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">./encode_test.sh -h
+./encode_test.sh 2<span class="token operator">&gt;</span><span class="token operator">&amp;</span>1 <span class="token operator">|</span> <span class="token function">tee</span> <span class="token variable"><span class="token variable">`</span><span class="token function">date</span> +<span class="token string">&quot;%F_%Hh%Mm%Ss&quot;</span><span class="token variable">`</span></span>.log
+</pre><h2 class="mume-header" id="how-to-update-input-files">How to update input files</h2>
+
+<p>Simply update the content of the <code>input</code> directory with your png files.</p>
+<blockquote>
+<p>Note You can also use <code>-i dirname</code> parameter to use to preferred directory.</p>
+</blockquote>
+<p>You can update the <code>input.7z</code> file with the <code>input</code> directory content thanks to following commands:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">rm</span> input.7z
+7z a input.7z input
+</pre><h2 class="mume-header" id="apng-or-webp-instead-of-vp9">APNG or WebP instead of vp9 ?</h2>
+
+<p>Before selecting vp9, I have considered both <strong>apng</strong> and <strong>webp</strong> image formats. But results are clearly not (maybe not yet) as good as vp9 ones for both quality (lossless) and filesize (lossy).</p>
+<p><strong>APNG</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">time</span> gif2apng <span class="token variable">${output}</span>/imagemagick_default.gif -o <span class="token variable">${output}</span>/gif2apng_default.png
+</pre><p><strong>WebP</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">export</span> t<span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token keyword">echo</span> <span class="token string">&quot;1000/<span class="token variable">$fps</span>&quot;</span> <span class="token operator">|</span> <span class="token function">bc</span><span class="token variable">`</span></span>
+<span class="token function">time</span> img2webp -loop 0 -d <span class="token variable">$t</span>             <span class="token variable">${input}</span>/*.png -o <span class="token variable">${output}</span>/img2webp_default.webp
+<span class="token function">time</span> img2webp -loop 0 -d <span class="token variable">$t</span> -lossless   <span class="token variable">${input}</span>/*.png -o <span class="token variable">${output}</span>/img2webp_lossless.webp
+<span class="token function">time</span> img2webp -loop 0 -d <span class="token variable">$t</span> -min_size   <span class="token variable">${input}</span>/*.png -o <span class="token variable">${output}</span>/img2webp_min_size.webp
+<span class="token function">time</span> img2webp -loop 0 -d <span class="token variable">$t</span> -mixed      <span class="token variable">${input}</span>/*.png -o <span class="token variable">${output}</span>/img2webp_mixed.webp
+<span class="token function">time</span> img2webp -loop 0 -d <span class="token variable">$t</span> -mixed -m 6 <span class="token variable">${input}</span>/*.png -o <span class="token variable">${output}</span>/img2webp_mixed_m6.webp
+</pre><p><strong>Documentations</strong></p>
+<ul>
+<li>WebP: <a href="https://developers.google.com/speed/webp/docs/img2webp">img2webp</a></li>
+<li>APNG: <a href="http://gif2apng.sourceforge.net/">gif2apng</a> or <a href="https://ezgif.com/apng-maker">ezgif online apng</a></li>
+</ul>
+<h2 class="mume-header" id="wrap-up">Wrap up</h2>
+
+<p>We may have better results using different vp9 encoder parameters...</p>
+<h2 class="mume-header" id="commentsexclamation-questionsquestion">Comments&#x2757;&#xFE0F; Questions&#x2753;</h2>
+
+<p>If you have comments or questions, send me a email at <a href="mailto:coolcornucopia@outlook.com">coolcornucopia@outlook.com</a> &#x2709;&#xFE0F;.</p>
+<p>--</p>
+<p>Peace &#x1F604;</p>
+<p>coolcornucopia</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
