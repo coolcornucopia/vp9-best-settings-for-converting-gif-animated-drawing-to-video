@@ -12,7 +12,7 @@ The goal of this page is to list results I captured while looking for the **VP9 
 
 <!-- code_chunk_output -->
 
-- [Quick outcomes without wasting time reading more :smile:](#quick-outcomes-without-wasting-time-reading-more-smile)
+- [Quick outcomes without wasting time reading more (TLDR) :smile:](#quick-outcomes-without-wasting-time-reading-more-tldr-smile)
 - [Extra notes](#extra-notes)
 - [Visual results](#visual-results)
 - [Detailed results](#detailed-results)
