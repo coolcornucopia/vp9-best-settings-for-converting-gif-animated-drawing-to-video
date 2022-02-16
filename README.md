@@ -1,11 +1,32 @@
-## VP9 best settings for converting animated gif-like png sequence to a video
+# VP9 best settings for converting animated gif-like png sequence to a video
 
 The goal of this page is to list results I captured while looking for the **VP9 video encoder best settings** for **converting a gif-like** animated drawing **based on a png sequence** to a **video**. As gif is a *lossless* image format, the goal here is not to get the smallest video file, but more the best compromise between the quality (prio 1), the file size (prio 2) and the encoding time (prio 3).
 
 > **Note** The input png sequence images have been captured thanks to the **Python Turtle Country Flags :snake: :turtle:** from [here](https://github.com/coolcornucopia/python-turtle-country-flags).
 
+---
 
-## Quick outcomes without wasting time reading more :smile:
+**Table of contents**
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Quick outcomes without wasting time reading more :smile:](#quick-outcomes-without-wasting-time-reading-more-smile)
+- [Extra notes](#extra-notes)
+- [Visual results](#visual-results)
+- [Detailed results](#detailed-results)
+- [Related documentations](#related-documentations)
+- [How to use the scripts](#how-to-use-the-scripts)
+- [How to update input files](#how-to-update-input-files)
+- [APNG or WebP instead of vp9 ?](#apng-or-webp-instead-of-vp9)
+- [Wrap up](#wrap-up)
+- [Any questions or comments are welcome :bird:](#any-questions-or-comments-are-welcome-bird)
+
+<!-- /code_chunk_output -->
+
+
+## Quick outcomes without wasting time reading more (TLDR) :smile:
 
 0. :medal_sports: **Forget gif format, use instead webm vp9 video format**. You may think about using apng or webp image formats but results are not as good as vp9 for both quality and file size.
 1. :1st_place_medal: Best command that is **perfect in most cases :heavy_check_mark:**:
@@ -162,11 +183,11 @@ We may have better results using different vp9 encoder parameters...
 
 
 
-## Comments:exclamation: Questions:question:
-If you have comments or questions, send me a email at coolcornucopia@outlook.com :email:.
+## Any questions or comments are welcome :bird:
+If you have any comments or questions, feel free to send me an email at coolcornucopia@outlook.com :email:.
 
 --
 
-Peace :smile:
+Peace
 
-coolcornucopia
+coolcornucopia :smile:
